@@ -18,8 +18,6 @@ parser.add_argument("--output_path",
                     default='./result/')
 args = parser.parse_args()
 
-valid_info_tags = ['t_jbxx_nr', 't_grjj_nr', 't_resume_nr']
-
 def file_extension(path):
     return os.path.splitext(path)[1]
 
@@ -65,7 +63,6 @@ if __name__ == "__main__":
             os.mkdir(args.output_path)
         pkl_file = os.path.join(args.output_path, "result.pkl")
         txt_file = os.path.join(args.output_path, "result.txt")
-        
         with open(pkl_file, "wb") as result_pkl:
             pkl.dump(result, result_pkl)
         with open(txt_file, "w") as result_txt:
