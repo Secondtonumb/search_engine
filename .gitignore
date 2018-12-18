@@ -1,0 +1,14 @@
+
+result/
+__pycache__/
+pylucene-7.5.0/
+homepage/
+lucene-7.5.0/
+metadata/
+weblech-0.0.3/
+
+*.html
+*.dotx
+*.pdf
+*.ppt
+temp*
