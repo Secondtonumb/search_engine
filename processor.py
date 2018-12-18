@@ -6,20 +6,20 @@ import argparse
 import pickle as pkl
 from html_parser import get_professor_name, get_valid_info
 
-
-
 parser = argparse.ArgumentParser(description=' ')
 parser.add_argument('--raw_file_path',
                     type=str,
-                    default='./raw_data/',
+                    default='./metadata/',
                     help='raw_html_file_path',)
 parser.add_argument("--output_path",
                     type=str,
                     default='./result/')
 args = parser.parse_args()
 
+
 def file_extension(path):
     return os.path.splitext(path)[1]
+
 
 def valid_file_generator(root):
     '''
@@ -38,6 +38,7 @@ def valid_file_generator(root):
                file_extension(temp_path) is '.htm' or '.html':
                 valid_file_list.append(temp_path)
     return valid_file_list
+
 
 if __name__ == "__main__":
     if os.path.isdir(args.raw_file_path) == 0:
@@ -69,4 +70,3 @@ if __name__ == "__main__":
             items = str("\n").join(result)
             result_txt.write(items)
         print("---- Finished ----")
-

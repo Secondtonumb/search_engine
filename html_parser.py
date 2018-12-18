@@ -1,6 +1,8 @@
 from bs4 import BeautifulSoup
-# IMPORTANT: It seems that valid info are all included in "h1" attribute
-
+'''
+Website Denoising Module
+'''
+# It seems that valid info are all included in "p" attribute
 def get_professor_name(text):
     """
     INPUT:

@@ -3,14 +3,11 @@ import pickle as pkl
 import jieba.analyse
 
 from tqdm import tqdm
-from pprint import pprint
 
 with open('./result/result.pkl', 'rb') as input_txt:
     input = pkl.load(input_txt)
 
 dict_ = []  # count all word included in all docs(list)
-
-input = input[4000: 4010]
 
 for item in tqdm(input):
     seg = jieba.lcut(item)  # segmentation for words and save the in list
@@ -36,6 +33,7 @@ def current_keyword_value(keyword, doc_index, doc):
     count = doc.count(keyword)
     value.append(count)
     return value
+
 
 for key_index in tqdm(range(len(dict_keys))):  # key index: keyword index
     count = 0
